@@ -1,0 +1,209 @@
+/* =======================
+   GLOBAL BACKGROUND
+======================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: url("../static/images/music.jpeg");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Proper width calculation */
+* {
+    box-sizing: border-box;
+}
+
+/* =======================
+   LOGIN PAGE DESIGN
+======================= */
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-title {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #0a2a43;
+}
+
+/* Glass card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 40px;
+    width: 380px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    color: #0a2a43;
+}
+
+.glass-card h2 {
+    margin-bottom: 25px;
+}
+
+/* Input box */
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #0a2a43;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background: #f5e6a6;
+}
+
+/* Button */
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: #34c759;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #28a745;
+}
+
+/* Error */
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* =======================
+   FLOATING EMOJIS
+======================= */
+
+.emoji {
+    position: fixed;
+    bottom: -50px;
+    font-size: 28px;
+    animation: floatUp 10s linear infinite;
+    z-index: 5;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+/* =======================
+   HOME / MOOD / PLAYLIST
+======================= */
+
+.center-box {
+    text-align: center;
+    margin-top: 150px;
+}
+
+/* Spotify iframe */
+iframe {
+    border-radius: 15px;
+}
+
+/* =======================
+   BOTTOM DECORATIVE IMAGES
+======================= */
+
+.bottom-left-img {
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    width: 220px;
+    z-index: 1;
+}
+
+.bottom-right-img {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 220px;
+    z-index: 1;
+}
+/* =========================
+   NEW HOME PAGE DESIGN
+========================= */
+
+.main-container {
+    text-align: center;
+    padding-top: 60px;
+    color: #0a2a43;
+}
+
+.main-title {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.glass-option-card {
+    width: 280px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+.glass-option-card:hover {
+    transform: translateY(-10px);
+}
+
+.glass-option-card h3 {
+    margin: 15px 0 10px;
+}
+
+.glass-option-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    font-size: 40px;
+}

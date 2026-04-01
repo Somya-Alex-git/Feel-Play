@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FeelPlay Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="main-container">
+
+    <h1 class="main-title">FeelPlay</h1>
+    <h2 class="sub-title">How do you want to share your emotion?</h2>
+
+    <div class="card-container">
+
+        <div class="glass-option-card">
+            <div class="icon">✏️</div>
+            <h3>Text Input</h3>
+            <p>Type how you feel in words</p>
+            <a href="/mood?type=text">
+                <button>Enter Text</button>
+            </a>
+        </div>
+
+        <div class="glass-option-card">
+            <div class="icon">😊 😔 😡</div>
+            <h3>Emoji Input</h3>
+            <p>Select an emoji that matches your mood</p>
+            <a href="/mood?type=emoji">
+                <button>Choose Emoji</button>
+            </a>
+        </div>
+
+        <div class="glass-option-card">
+            <div class="icon">📷</div>
+            <h3>Facial Expression</h3>
+            <p>Detect emotion using camera</p>
+            <a href="/mood?type=webcam">
+                <button>Scan Face</button>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

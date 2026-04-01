@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FeelPlay Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <h1 class="logo-title">🎵 FeelPlay</h1>
+
+    <div class="glass-card">
+        <h2>Emotion Based Music<br>Recommendation System</h2>
+
+        <form action="/login" method="post">
+
+            <div class="input-box">
+                <i class="fa fa-user"></i>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit">Let's Feel the Music</button>
+
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+
+</div>
+<div class="emoji" style="left:10%">😊</div>
+<div class="emoji" style="left:25%">😢</div>
+<div class="emoji" style="left:40%">🔥</div>
+<div class="emoji" style="left:60%">🎶</div>
+<div class="emoji" style="left:75%">😎</div>
+<img src="{{ url_for('static', filename='images/dance-left.gif') }}" class="bottom-left-img">
+<img src="{{ url_for('static', filename='images/music-time-right.png') }}" class="bottom-right-img">
+</body>
+</html>

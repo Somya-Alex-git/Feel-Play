@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Playlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="center-box">
+    <h2>Your Mood: {{ mood }}</h2>
+
+    {% if link %}
+        <iframe src="{{ link }}"
+                width="350"
+                height="450"
+                frameborder="0"
+                allow="autoplay; encrypted-media">
+        </iframe>
+    {% else %}
+        <h3>No Playlist Found 😢</h3>
+    {% endif %}
+
+    <br><br>
+    <a href="/home"><button>Back to Home</button></a>
+</div>
+
+</body>
+</html>

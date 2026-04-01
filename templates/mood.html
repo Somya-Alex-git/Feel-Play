@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Mood</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="center-box">
+
+    <!-- TEXT SECTION -->
+    <div id="textSection" 
+         style="display: {{ 'block' if mood_type == 'text' else 'none' }}">
+
+        <h2>Type Your Mood 🎵</h2>
+        <form action="/playlist" method="POST">
+            <input type="text" name="mood" 
+                   placeholder="happy / sad / angry" required>
+            <br><br>
+            <button type="submit">Detect Song 🎧</button>
+        </form>
+
+    </div>
+
+    <!-- EMOJI SECTION -->
+    <div id="emojiSection" 
+         style="display: {{ 'block' if mood_type == 'emoji' else 'none' }}">
+
+        <h2>Select Emoji 🎵</h2>
+        <form action="/playlist" method="POST">
+            <input type="text" name="mood" 
+                   placeholder="😊 😢 😡 🎉 ❤️" required>
+            <br><br>
+            <button type="submit">Detect Song 🎧</button>
+        </form>
+
+    </div>
+
+    <!-- CNN WEBCAM SECTION -->
+    <div id="cameraSection" 
+         style="display: {{ 'block' if mood_type == 'webcam' else 'none' }}">
+
+        <h2>AI Emotion Detection 🎥</h2>
+
+        <a href="/webcam_detect">
+            <button>Start AI Detection</button>
+        </a>
+
+        <p>Press <b>Q</b> to stop camera</p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
