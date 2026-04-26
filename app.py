@@ -116,3 +116,31 @@ def webcam_detect():
 if __name__ == "__main__":
     webbrowser.open("http://127.0.0.1:5000/")
     app.run(debug=False, use_reloader=False)
+    import base64
+import numpy as np
+import cv2
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    image_data = request.form['image']
+
+    # Remove header
+    image_data = image_data.split(",")[1]
+
+    # Decode image
+    image_bytes = base64.b64decode(image_data)
+    np_arr = np.frombuffer(image_bytes, np.uint8)
+    img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
+
+    # Convert to grayscale
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    face = cv2.resize(gray, (48, 48))
+    face = face / 255.0
+    face = face.reshape(1, 48, 48, 1)
+
+    prediction = model.predict(face)
+    emotion = np.argmax(prediction)
+
+    emotions = ["Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral"]
+
+    return render_template("result.html", emotion=emotions[emotion])
